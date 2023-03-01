@@ -1,4 +1,5 @@
 import {
+  ImageBackground,
 	KeyboardAvoidingView,
 	Platform,
 	StyleSheet,
@@ -43,8 +44,14 @@ const LoginScreen = ({navigation}:any) => {
   }
 
 	return (
+    <View style={styles.container}>
+    <ImageBackground
+					source={require("../images/login2.jpg")}
+					resizeMode="cover"
+					style={styles.image}
+				>
 		<KeyboardAvoidingView
-			style={styles.container}
+			style={styles.keyboardView}
 			enabled
 			behavior={Platform.OS === "ios" ? "padding" : "height"}
 		>
@@ -83,17 +90,27 @@ const LoginScreen = ({navigation}:any) => {
 				</TouchableOpacity>
 			</View>
 		</KeyboardAvoidingView>
+    </ImageBackground>
+    </View>
 	);
 };
 
 export default LoginScreen;
 
 const styles = StyleSheet.create({
-	container: {
+  container: {
+    flex: 1,  
+  },
+  image: {
 		flex: 1,
+    alignItems:"center"
+	},
+  keyboardView:{
+    flex:1,
+		width: "100%",
 		justifyContent: "center",
 		alignItems: "center",
-	},
+  },
 	inputContainer: {
 		width: "80%",
 	},
