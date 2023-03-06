@@ -12,7 +12,7 @@ export default function App() {
 	console.log("Debug by using console log");
 	return (
 		<NavigationContainer>
-			<Stack.Navigator initialRouteName="Login">
+			<Stack.Navigator initialRouteName="Home">
 				<Stack.Screen
 					name="Login"
 					options={{ headerShown: false }}
